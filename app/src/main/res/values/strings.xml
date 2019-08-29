@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">ConnectModules</string>
+    <string name="title_base">base</string>
+    <string name="title_dynamicfeature_test">Dynamic Feature Test</string>
+</resources>
