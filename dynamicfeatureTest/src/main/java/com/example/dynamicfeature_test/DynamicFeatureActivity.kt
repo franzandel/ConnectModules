@@ -5,16 +5,18 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import com.example.connectmodules.ConnectModulesApp
-import com.example.connectmodules.HelperApp
- import kotlinx.android.synthetic.main.activity_dynamic_feature.*
+//import com.example.connectmodules.HelperApp
+import kotlinx.android.synthetic.main.activity_dynamic_feature.*
 import javax.inject.Inject
 
 class DynamicFeatureActivity : AppCompatActivity() {
 
 //    @Inject
 //    lateinit var helper: Helper
-    @Inject
-    lateinit var helperApp: HelperApp
+//    @Inject
+//    lateinit var helperApp: HelperApp
+
+    var helperApp = ConnectModulesApp.sharingComponent.helperApp()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,11 +34,11 @@ class DynamicFeatureActivity : AppCompatActivity() {
     }
 
     private fun initDI() {
-        DaggerDynamicFeatureComponent
-            .builder()
-            .appComponent(ConnectModulesApp.appComponent)
-            .dynamicFeatureModule(DynamicFeatureModule())
-            .build()
-            .inject(this)
+//        DaggerDynamicFeatureComponent
+//            .builder()
+//            .appComponent(ConnectModulesApp.appComponent)
+//            .dynamicFeatureModule(DynamicFeatureModule())
+//            .build()
+//            .inject(this)
     }
 }

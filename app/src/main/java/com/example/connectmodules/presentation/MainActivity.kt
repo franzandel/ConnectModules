@@ -4,7 +4,11 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import com.example.connectmodules.ConnectModulesApp
+//import com.example.connectmodules.HelperApp
 import com.example.connectmodules.R
+import com.example.sharingdependency.HelperApp
+//import com.example.sharingdependency.HelperApp
 import com.google.android.play.core.splitinstall.SplitInstallManager
 import com.google.android.play.core.splitinstall.SplitInstallManagerFactory
 import com.google.android.play.core.splitinstall.SplitInstallRequest
@@ -20,12 +24,19 @@ class MainActivity : AppCompatActivity() {
     @Inject
     lateinit var splitInstallManager: SplitInstallManager
 
+//    @Inject
+//    lateinit var helperApp : HelperApp
+
+    var helperApp = ConnectModulesApp.sharingComponent.helperApp()
+
     private var mySessionId = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         AndroidInjection.inject(this)
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        Log.d("SharingDependency", helperApp.printHello())
 
         btn_connectModule.setOnClickListener {
 //            mainActivityRouter.goToTestActivityPage()
@@ -57,6 +68,8 @@ class MainActivity : AppCompatActivity() {
 //                    "com.example.connectmodules",
 //                    "com.example.dynamicfeatureTest.DynamicFeatureActivity"
 //                )
+
+                // CALL ACTIVITY FROM DYNAMIC FEATURE MODULE
                 val intent = Intent(this,
                     Class.forName("com.example.dynamicfeature_test.DynamicFeatureActivity"))
                 startActivity(intent)

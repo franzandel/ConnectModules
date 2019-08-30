@@ -1,2 +1,2 @@
-include ':app', ':base', ':testingactivity', ':dynamicfeatureTest'
+include ':app', ':base', ':testingactivity', ':dynamicfeatureTest', ':sharingdependency'
 rootProject.name='ConnectModules'

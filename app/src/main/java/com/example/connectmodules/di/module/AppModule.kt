@@ -3,7 +3,7 @@ package com.example.connectmodules.di.module
 import com.example.base.di.module.BaseModule
 import com.example.base.di.scope.AppScope
 import com.example.base.router.ScreenRouter
-import com.example.connectmodules.HelperApp
+//import com.example.connectmodules.HelperApp
 import com.example.connectmodules.router.ScreenRouterImpl
 import dagger.Module
 import dagger.Provides
@@ -20,7 +20,7 @@ class AppModule : BaseModule() {
     @AppScope
     fun provideScreenRouter() : ScreenRouter = ScreenRouterImpl()
 
-    @Provides
-    @AppScope
-    fun provideHelperApp() : HelperApp = HelperApp()
+//    @Provides
+//    @AppScope
+//    fun provideHelperApp() : HelperApp = HelperApp()
 }

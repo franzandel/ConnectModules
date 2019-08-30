@@ -22,6 +22,7 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation project(':app')
     implementation project(':base')
+    implementation project(':sharingdependency')
 
     kapt 'com.google.dagger:dagger-compiler:2.23.2'
     kapt 'com.google.dagger:dagger-android-processor:2.23.2'
