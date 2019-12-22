@@ -18,13 +18,6 @@ import javax.inject.Singleton
 @Component(modules = [(SharingModule::class)])
 interface SharingComponent {
 
-    @Component.Builder
-    interface Builder {
-        @BindsInstance
-        fun application(application: Application) : Builder
-        fun build() : SharingComponent
-    }
-
     fun inject(app: Application)
 
     fun helperApp() : HelperApp

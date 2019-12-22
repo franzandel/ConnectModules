@@ -53,7 +53,6 @@ class ConnectModulesApp : Application(), HasActivityInjector {
 
     private fun createSharingComponent(): SharingComponent {
         return DaggerSharingComponent.builder()
-            .application(this)
             .build()
 
         // OLD BUILDER

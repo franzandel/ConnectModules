@@ -34,7 +34,7 @@ interface AppComponent {
 
     fun inject(app: ConnectModulesApp)
 
-    fun plusSharingComponent(sharingComponent: SharingComponent) : SharingComponent
+//    fun plusSharingComponent(sharingComponent: SharingComponent) : SharingComponent
 }
 
 //@AppScope
